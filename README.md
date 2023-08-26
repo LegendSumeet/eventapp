@@ -1,10 +1,13 @@
 ![image](https://github.com/LegendSumeet/eventapp/assets/85386116/32750f28-0f15-4527-8093-4443eea583b5)
+
+
+
 ![image](https://github.com/LegendSumeet/eventapp/assets/85386116/70ab69d2-f062-48f5-bdc6-dd46c7a26d8f)
 
 
-Certainly! Below is an example of a README.md file for your Event Planning App project built using the Flutter framework:
 
-```markdown
+
+
 # Event Planning App
 
 An open-source Flutter-based Event Planning App to simplify the process of organizing and managing various types of events.
@@ -77,18 +80,3 @@ We welcome contributions from the community! To contribute to this project:
 4. Create a pull request against the `main` branch.
 
 5. Our team will review your pull request, provide feedback, and merge it once it's ready.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to reach out if you have any questions or need further assistance!
-
-**Maintainers:**  
-Your Name ([Your GitHub Profile](https://github.com/your-username))  
-Contributor Name ([Contributor GitHub Profile](https://github.com/contributor-username))
-```
-
-Remember to replace placeholders like `your-username`, `new-feature`, `Your Name`, and `Contributor Name` with your actual information. Additionally, ensure that you have the necessary sections like "Getting Started," "Contributing," and "License" properly filled out.
