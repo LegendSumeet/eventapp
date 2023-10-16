@@ -14,16 +14,7 @@ An open-source Flutter-based Event Planning App to simplify the process of organ
 
 ## Features
 
-- Event Creation and Customization
-- Invitations and Guest Management
-- Agenda and Schedule
-- Ticketing and Registration
-- Venue and Map Integration
-- Communication and Updates
-- Networking and Engagement
-- Collaboration Tools
-- Live Streaming and Interaction (for virtual/hybrid events)
-- Feedback and Surveys
+
 
 ## Tech Stack
 
