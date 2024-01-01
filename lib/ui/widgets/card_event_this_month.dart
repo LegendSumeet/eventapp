@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 class CardEventThisMonth extends StatelessWidget {
   final EventModel eventModel;
 
-  const CardEventThisMonth({required this.eventModel, Key? key})
-      : super(key: key);
+  const CardEventThisMonth({required this.eventModel, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,6 @@ class CardEventThisMonth extends StatelessWidget {
               const SizedBox(height: 4),
               Row(
                 children: [
-          
                   const SizedBox(width: 4),
                   Text(
                     eventModel.location,
