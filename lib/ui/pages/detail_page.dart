@@ -59,17 +59,17 @@ class DetailPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "Total Price",
                     style:
                         TextStyle(fontSize: 12, color: AppColors.greyTextColor),
                   ),
-                  const SizedBox(height: 6),
+                  SizedBox(height: 6),
                   Row(
-                    children: const [
+                    children: [
                       Text(
                         "\$100",
                         style: TextStyle(
@@ -95,7 +95,7 @@ class DetailPage extends StatelessWidget {
                   arguments: eventModel.toJson(),
                 ),
                 style: ElevatedButton.styleFrom(
-                    primary: AppColors.primaryColor,
+                    backgroundColor: AppColors.primaryColor,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16)),
@@ -176,7 +176,6 @@ class DetailPage extends StatelessWidget {
             "Detail",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
-          
         ],
       );
 
@@ -199,7 +198,6 @@ class DetailPage extends StatelessWidget {
                     const SizedBox(height: 6),
                     Row(
                       children: [
-                       
                         const SizedBox(width: 4),
                         Text(
                           eventModel.location,

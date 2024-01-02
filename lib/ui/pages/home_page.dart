@@ -19,12 +19,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar:
           const PreferredSize(preferredSize: Size(0, 0), child: CustomAppBar()),
-      bottomNavigationBar: const ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
-          ),
-          child: MyNavigationBar()),
+      bottomNavigationBar: const MyNavigationBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(top: 24),
