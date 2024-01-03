@@ -11,15 +11,17 @@ class Themes {
 
   static final ThemeData lightTheme = ThemeData(
     primaryColor: AppColors.primaryColor,
-    backgroundColor: AppColors.backgroundColor,
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      background: AppColors.backgroundColor,
+    ),
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(toolbarTextStyle: lightText),
     textTheme: TextTheme(
-      bodyText1: lightText,
-      bodyText2: lightText,
-      button: lightText,
-      caption: lightText,
-      overline: lightText,
+      bodyLarge: lightText,
+      bodyMedium: lightText,
+      labelLarge: lightText,
+      bodySmall: lightText,
+      labelSmall: lightText,
     ),
     scaffoldBackgroundColor: AppColors.backgroundColor,
     navigationBarTheme: const NavigationBarThemeData(

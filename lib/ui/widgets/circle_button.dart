@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 class CircleButton extends StatelessWidget {
   final String icon;
   final Function() onTap;
-  const CircleButton({required this.icon, required this.onTap, Key? key})
-      : super(key: key);
+  const CircleButton({required this.icon, required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

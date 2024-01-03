@@ -11,8 +11,7 @@ class StackParticipant extends StatelessWidget {
       required this.width,
       required this.height,
       required this.positionText,
-      Key? key})
-      : super(key: key);
+      super.key});
 
   @override
   Widget build(BuildContext context) {
