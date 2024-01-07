@@ -42,11 +42,16 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
         _customIcons("assets/images/profile.png", 24.0, 24.0),
       ],
       onTap: (int index) {
-        setState(() {
-          print('Tapped index: $index');
+        // setState(() {
+        //   print('Tapped index: $index');
+        //
+        //   currentIndex = index;
+        // });
 
-          currentIndex = index;
-        });
+        //by vineet
+        if(index==3){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+        }
       },
     );
   }
