@@ -18,7 +18,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
 
   int currentIndex = 0;
   final List<Widget> buildPages = [
-    const HomePage(),
+    HomePage(),
     const TicketPage(),
     const CalenderPage(),
     const ProfilePage(),
