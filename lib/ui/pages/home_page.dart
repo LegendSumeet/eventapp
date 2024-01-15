@@ -1,7 +1,10 @@
+//import 'dart:js';
+
 import 'package:event_app/app/configs/colors.dart';
 import 'package:event_app/app/resources/constant/named_routes.dart';
 import 'package:event_app/bloc/event_cubit.dart';
 import 'package:event_app/data/event_model.dart';
+import 'package:event_app/ui/pages/profile_page.dart';
 import 'package:event_app/ui/widgets/card_event_this_month.dart';
 import 'package:event_app/ui/widgets/card_popular_event.dart';
 import 'package:event_app/ui/widgets/custom_app_bar.dart';
@@ -27,7 +30,7 @@ class HomePage extends StatelessWidget {
             create: (_) => EventCubit()..loadEventData(),
             child: Column(
               children: [
-                _buildHeader(),
+                _buildHeader(context),
                 const SizedBox(height: 24),
                 _buildSearch(),
                 const SizedBox(height: 24),
@@ -106,7 +109,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _buildHeader() => Padding(
+  _buildHeader(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -135,15 +138,25 @@ class HomePage extends StatelessWidget {
                 ]),
               ],
             ),
-            Container(
-              width: 48,
-              height: 48,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      "https://avatars.githubusercontent.com/u/85386116?s=400&u=81f5587a31a3c80319ed97931c1001636a663198&v=4"),
+            GestureDetector(
+              onTap: () {
+                // Navigate to the specific page here
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
+              child: Container(
+                width: 48,
+                height: 48,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                        "https://avatars.githubusercontent.com/u/85386116?s=400&u=81f5587a31a3c80319ed97931c1001636a663198&v=4"),
+                  ),
                 ),
               ),
             )
