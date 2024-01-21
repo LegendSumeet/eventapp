@@ -5,6 +5,7 @@ import 'package:event_app/app/resources/constant/named_routes.dart';
 import 'package:event_app/bloc/event_cubit.dart';
 import 'package:event_app/data/event_model.dart';
 import 'package:event_app/ui/pages/profile_page.dart';
+import 'package:event_app/ui/pages/view_all_page.dart';
 import 'package:event_app/ui/widgets/card_event_this_month.dart';
 import 'package:event_app/ui/widgets/card_popular_event.dart';
 import 'package:event_app/ui/widgets/custom_app_bar.dart';
@@ -34,24 +35,33 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 24),
                 _buildSearch(),
                 const SizedBox(height: 24),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Popular Event",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
                         ),
                       ),
-                      Text(
-                        "View All",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: AppColors.greyTextColor),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewAllPage(isPopularEvent: true,)),
+                          );
+                        },
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: AppColors.greyTextColor),
+                        ),
                       )
                     ],
                   ),
@@ -69,22 +79,31 @@ class HomePage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 24),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Event This Month",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
                       ),
-                      Text(
-                        "View All",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: AppColors.greyTextColor),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewAllPage(isPopularEvent: false,)),
+                          );
+                        },
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: AppColors.greyTextColor),
+                        ),
                       )
                     ],
                   ),
