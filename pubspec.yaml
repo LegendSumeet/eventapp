@@ -1,94 +1,26 @@
 name: event_app
 description: LegendSumeet App.
-
-
-
-publish_to: 'none' 
-
-
-
-
-
-
-
-
-
-
-
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
   sdk: ">=2.17.5 <3.0.0"
 
-
-
-
-
-
-
 dependencies:
   flutter:
     sdk: flutter
-
-
-  
-  
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
   flutter_bloc: ^8.1.3
   curved_navigation_bar: ^1.0.3
-  geolocator: ^10.1.0
-  geocoding: ^2.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  
-  
-  
-  
-  
   flutter_lints: ^3.0.1
 
-
-
-
-
 flutter:
-
-  
-  
-  
   uses-material-design: true
-
-  
   assets:
     - assets/images/
     - assets/json/
-
-  
-  
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

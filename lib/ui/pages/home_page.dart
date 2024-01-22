@@ -1,9 +1,10 @@
+//import 'dart:js';
+
 import 'package:event_app/app/configs/colors.dart';
 import 'package:event_app/app/resources/constant/named_routes.dart';
 import 'package:event_app/bloc/event_cubit.dart';
 import 'package:event_app/controllers/Home%20Page%20controllers/location_controller.dart';
 import 'package:event_app/data/event_model.dart';
-import 'package:event_app/models/Home%20page%20models/locationModel.dart';
 import 'package:event_app/ui/widgets/card_event_this_month.dart';
 import 'package:event_app/ui/widgets/card_popular_event.dart';
 import 'package:event_app/ui/widgets/custom_app_bar.dart';
@@ -67,28 +68,37 @@ class _HomePageState extends State<HomePage> {
             create: (_) => EventCubit()..loadEventData(),
             child: Column(
               children: [
-                _buildHeader(),
+                _buildHeader(context),
                 const SizedBox(height: 24),
                 _buildSearch(),
                 const SizedBox(height: 24),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Popular Event",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
                         ),
                       ),
-                      Text(
-                        "View All",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: AppColors.greyTextColor),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewAllPage(isPopularEvent: true,)),
+                          );
+                        },
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: AppColors.greyTextColor),
+                        ),
                       )
                     ],
                   ),
@@ -106,22 +116,31 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 const SizedBox(height: 24),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Event This Month",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
                       ),
-                      Text(
-                        "View All",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: AppColors.greyTextColor),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewAllPage(isPopularEvent: false,)),
+                          );
+                        },
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: AppColors.greyTextColor),
+                        ),
                       )
                     ],
                   ),
@@ -146,7 +165,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _buildHeader() => Padding(
+  _buildHeader(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -175,15 +194,25 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ],
             ),
-            Container(
-              width: 48,
-              height: 48,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      "https://avatars.githubusercontent.com/u/85386116?s=400&u=81f5587a31a3c80319ed97931c1001636a663198&v=4"),
+            GestureDetector(
+              onTap: () {
+                // Navigate to the specific page here
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
+              child: Container(
+                width: 48,
+                height: 48,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                        "https://avatars.githubusercontent.com/u/85386116?s=400&u=81f5587a31a3c80319ed97931c1001636a663198&v=4"),
+                  ),
                 ),
               ),
             )

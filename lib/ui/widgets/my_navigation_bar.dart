@@ -20,7 +20,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   final List<Widget> buildPages = [
     HomePage(),
     const TicketPage(),
-    const CalenderPage(),
+    const CalendarPage(),
     const ProfilePage(),
   ];
   @override
@@ -49,8 +49,12 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
         // });
 
         //by vineet
-        if(index==3){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+        if (index == 2) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CalendarPage()));
+        } else if (index == 3) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ProfilePage()));
         }
       },
     );
