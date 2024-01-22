@@ -3,9 +3,8 @@
 import 'package:event_app/app/configs/colors.dart';
 import 'package:event_app/app/resources/constant/named_routes.dart';
 import 'package:event_app/bloc/event_cubit.dart';
+import 'package:event_app/controllers/Home%20Page%20controllers/location_controller.dart';
 import 'package:event_app/data/event_model.dart';
-import 'package:event_app/ui/pages/profile_page.dart';
-import 'package:event_app/ui/pages/view_all_page.dart';
 import 'package:event_app/ui/widgets/card_event_this_month.dart';
 import 'package:event_app/ui/widgets/card_popular_event.dart';
 import 'package:event_app/ui/widgets/custom_app_bar.dart';
@@ -14,8 +13,46 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+
+class HomePage extends StatefulWidget {
+  HomePage({super.key});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+
+}
+class _HomePageState extends State<HomePage> {
+
+  String address_locality="";
+  String address_country="";
+
+  late LocationController _controller;
+  late locationModel lc;
+
+  @override
+  void initState(){
+
+    super.initState();
+    _controller=LocationController();
+    lc=locationModel(country: "", locality: "");
+    _updateLocation();
+  }
+
+  Future<void> _updateLocation() async{
+    try{
+      lc = await _controller.getCurrentLocation();
+      setState(() {
+        address_locality = lc.locality;
+        address_country = lc.country;
+      });
+    }catch(e){
+      print('Error updating location: $e');
+      setState(() {
+        address_locality="No address";
+        address_country="";
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,11 +170,11 @@ class HomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Current Location",
+                  address_locality,
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -147,7 +184,7 @@ class HomePage extends StatelessWidget {
                 Row(children: [
                   SizedBox(width: 4),
                   Text(
-                    "india",
+                    address_country,
                     style: TextStyle(
                       fontSize: 12,
                       color: AppColors.greyTextColor,

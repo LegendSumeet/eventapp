@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
           case NamedRoutes.homeScreen:
-            return MaterialPageRoute(builder: (context) => const HomePage());
+            return MaterialPageRoute(builder: (context) => HomePage());
           case NamedRoutes.detailScreen:
             return MaterialPageRoute(
               builder: (_) => const DetailPage(),
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
               settings: settings,
             );
           default:
-            return MaterialPageRoute(builder: (context) => const HomePage());
+            return MaterialPageRoute(builder: (context) => HomePage());
         }
       },
     );
