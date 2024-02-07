@@ -64,11 +64,3 @@ We welcome contributions from the community! To contribute to this project:
    ```
 4. Create a pull request against the `main` branch.
 5. Our team will review your pull request, provide feedback, and merge it once it's ready.
-
-## Special Note
-
-#IWOC2024
-
----
-
-Ensure you replace `your-username` with your actual GitHub username and update the feature descriptions accordingly. This format provides a clear and structured overview of the project, making it easier for contributors and users to understand and navigate.
