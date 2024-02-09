@@ -11,9 +11,9 @@ class CardEventThisMonth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
+      height: 95,
       margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: AppColors.whiteColor,
@@ -26,8 +26,8 @@ class CardEventThisMonth extends StatelessWidget {
             child: Image.network(
               eventModel.image,
               fit: BoxFit.cover,
-              width: 60,
-              height: double.infinity,
+              width: 75,
+              height: 75,
             ),
           ),
           const SizedBox(width: 12),
@@ -36,7 +36,10 @@ class CardEventThisMonth extends StatelessWidget {
             children: [
               Text(
                 eventModel.title,
-                style: const TextStyle(fontWeight: FontWeight.w500),
+                style: const TextStyle(
+                fontSize: 15,
+                letterSpacing: 0.3,
+                fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 4),
               Row(
@@ -64,7 +67,7 @@ class CardEventThisMonth extends StatelessWidget {
           const Spacer(),
           Container(
             height: 50,
-            width: 35,
+            width: 50,
             decoration: BoxDecoration(
               color: AppColors.primaryLightColor,
               borderRadius: BorderRadius.circular(10),
