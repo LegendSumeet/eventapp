@@ -12,6 +12,7 @@ import 'package:event_app/ui/widgets/card_event_this_month.dart';
 import 'package:event_app/ui/widgets/card_popular_event.dart';
 import 'package:event_app/ui/widgets/custom_app_bar.dart';
 import 'package:event_app/ui/widgets/my_navigation_bar.dart';
+import 'package:event_app/ui/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -244,29 +245,37 @@ class _HomePageState extends State<HomePage> {
         ),
       );
 
-  _buildSearch() => Container(
-        height: 48,
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: 24),
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(50)),
-          color: AppColors.greyLightColor,
+  _buildSearch() => GestureDetector(
+    onTap: () {
+      Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MySearchWidget()),
+          );
+    },
+    child: Container(
+          height: 48,
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(50)),
+            color: AppColors.greyLightColor,
+          ),
+          child: Row(
+            children: [
+              Image.asset('assets/images/search.png', width: 16),
+              const SizedBox(width: 8),
+              const Text(
+                "Search event...",
+                style: TextStyle(
+                    color: AppColors.greyTextColor, 
+                    fontWeight: FontWeight.w500
+                ),
+              )
+            ],
+          ),
         ),
-        child: Row(
-          children: [
-            Image.asset('assets/images/search.png', width: 16),
-            const SizedBox(width: 8),
-            const Text(
-              "Search event...",
-              style: TextStyle(
-                  color: AppColors.greyTextColor, 
-                  fontWeight: FontWeight.w500
-              ),
-            )
-          ],
-        ),
-      );
+  );
 
   _listPopularEvent(List<EventModel> events) => SizedBox(
         width: MediaQuery.of(context).size.width,
