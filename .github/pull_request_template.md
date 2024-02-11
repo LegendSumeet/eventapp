@@ -1,8 +1,5 @@
-**Description**
+# Fixes Issue🛠️
 
-<<<<<<< Updated upstream
-closes #
-=======
 <!-- Example: Closes #31 -->
 
 Closes #
@@ -12,8 +9,6 @@ Closes #
 <!--Please include a summary of the change and which issue is fixed.List any dependencies that are required for this change.-->
 
 # Type of change📄
-
-<!--Please delete options that are not relevant-->
 
 - [] Bug fix (non-breaking change which fixes an issue)
 - [] New feature (non-breaking change which adds functionality)
@@ -26,4 +21,3 @@ Closes #
 - [] I am an Open Source Contributor
 
 # Screenshots/GIF📷
->>>>>>> Stashed changes
