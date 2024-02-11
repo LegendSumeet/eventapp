@@ -1,8 +1,3 @@
-![image](https://github.com/LegendSumeet/eventapp/assets/85386116/32750f28-0f15-4527-8093-4443eea583b5)
-
-![image](https://github.com/LegendSumeet/eventapp/assets/85386116/70ab69d2-f062-48f5-bdc6-dd46c7a26d8f)
-
----
 
 # Event Planning App
 
@@ -12,19 +7,25 @@ Organizers can easily create and manage events, set up ticketing and registratio
 
 For attendees, the app provides a convenient platform to discover, browse, and RSVP to events based on their interests, preferences, and location. With features like event search, personalized recommendations, and social sharing capabilities, users can explore a diverse range of events and stay informed about upcoming gatherings in their area.
 
+<img src="https://github.com/LegendSumeet/eventapp/assets/85386116/32750f28-0f15-4527-8093-4443eea583b5" alt="image" width="270" height="470"> 
+
+<img src="https://github.com/LegendSumeet/eventapp/assets/85386116/70ab69d2-f062-48f5-bdc6-dd46c7a26d8f" alt="image" width="270" height="470">
+
+
+
 ## Features
 
-- **Popular Events Section**: Highlights trending or popular events that users may be interested in attending.
-- **Recommended Section**: Provides personalized event recommendations based on user preferences, past activity, or other factors.
-- **Interactive Event Calendar**: Users can access a dynamic calendar view to browse upcoming events, view event details, and add events to their schedule.
-- **Ticketing and Registration**: Secure ticketing and registration system enables organizers to sell tickets, manage attendee registrations, and track ticket sales in real-time.
-- **Venue Selection and Mapping**: Integration with maps and location services allows users to find event venues easily and navigate to event locations.
-- **Community Engagement**: Social features facilitate interaction and engagement among event attendees, speakers, and organizers through messaging, networking, and group discussions.
-- **Accessibility and Customization**: Accessibility options and customizable settings ensure inclusivity and cater to diverse user preferences and needs.
-- **Event Creation and Management**: Organizers can create, customize, and manage events effortlessly, including scheduling, ticketing, and attendee management.
-- **Edit Profile Section**: Enables users to update their profile information, including name, email, profile picture, and other relevant details.
-- **Search Feature**: Allows users to search for events based on keywords, dates, locations, or other criteria.
-- **Light and Dark Mode**: Offers users the option to switch between light and dark themes to suit their preferences and reduce eye strain in different lighting conditions.
+- **Popular Events Section**: Highlights trending or popular events.
+- **Recommended Section**: Provides personalized event recommendations.
+- **Interactive Event Calendar**: Users can browse and add events to their schedule.
+- **Ticketing and Registration**: Secure ticketing and registration system.
+- **Venue Selection and Mapping**: Integration with maps for finding event venues.
+- **Community Engagement**: Facilitates interaction among event attendees.
+- **Accessibility and Customization**: Includes accessibility options and customizable settings.
+- **Event Creation and Management**: Organizers can create, customize, and manage events.
+- **Edit Profile Section**: Allows users to update their profile information.
+- **Search Feature**: Enables users to search for events based on keywords, dates, locations, or other criteria.
+- **Light and Dark Mode**: Offers users the option to switch between light and dark themes.
 
 ## Tech Stack
 
@@ -36,19 +37,16 @@ For attendees, the app provides a convenient platform to discover, browse, and R
 Follow these steps to get the project up and running on your local machine:
 
 1. **Clone the repository:**
-
    ```sh
    git clone https://github.com/your-username/event-planning-app.git
    ```
 
 2. **Navigate to the project directory:**
-
    ```sh
    cd event-planning-app
    ```
 
 3. **Install dependencies:**
-
    ```sh
    flutter pub get
    ```
@@ -74,3 +72,18 @@ We welcome contributions from the community! To contribute to this project:
    ```
 4. Create a pull request against the `main` branch.
 5. Our team will review your pull request, provide feedback, and merge it once it's ready.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people:
+- [Legend Sumeet](https://github.com/LegendSumeet)
+- [Aayush Paigwar](https://github.com/AayushPaigwar)
+- [Prapti Sharma](https://github.com/praptisharma28)
+
+
+Contributions of any kind are welcome!🤗
+
+## License 👮
+
+EventApp is Licensed under the <a href="/eventapp/licence.md">MIT License</a>. Please go through the License at least once before contributing.
+
