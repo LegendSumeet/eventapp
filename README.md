@@ -75,13 +75,13 @@ We welcome contributions from the community! To contribute to this project:
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people:
-- [Legend Sumeet](https://github.com/LegendSumeet)
-- [Aayush Paigwar](https://github.com/AayushPaigwar)
-- [Prapti Sharma](https://github.com/praptisharma28)
+<a href="https://github.com/LegendSumeet/eventapp/graphs/contributors
+">
+  <img src="https://contrib.rocks/image?repo=LegendSumeet/eventapp" />
+</a>
 
 
-Contributions of any kind are welcome!🤗
+
 
 ## License 👮
 
