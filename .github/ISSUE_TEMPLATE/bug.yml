@@ -43,8 +43,10 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](eventapp/code_of_conduct.md)
+      label: "Checklist"
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: "I have checked the existing issues."
+          required: true
+
+        - label: "I follow [Code of Conduct](eventapp/code_of_conduct.md) of this project."
           required: true

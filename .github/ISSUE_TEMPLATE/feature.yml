@@ -39,4 +39,14 @@ body:
         context, screenshots, related links , etc.
     validations:
       required: false
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I have checked the existing issues."
+          required: true
+
+        - label: "I follow [Code of Conduct](eventapp/code_of_conduct.md) of this project."
+          required: true
  
