@@ -7,10 +7,15 @@ Organizers can easily create and manage events, set up ticketing and registratio
 
 For attendees, the app provides a convenient platform to discover, browse, and RSVP to events based on their interests, preferences, and location. With features like event search, personalized recommendations, and social sharing capabilities, users can explore a diverse range of events and stay informed about upcoming gatherings in their area.
 
-<img src="https://github.com/LegendSumeet/eventapp/assets/85386116/32750f28-0f15-4527-8093-4443eea583b5" alt="image" width="270" height="470"> 
 
-<img src="https://github.com/LegendSumeet/eventapp/assets/85386116/70ab69d2-f062-48f5-bdc6-dd46c7a26d8f" alt="image" width="270" height="470">
+## Screenshots
 
+| Screenshot- 1  |Screenshot- 2|
+| ---------------| ----------- |
+| <img src="https://github.com/LegendSumeet/eventapp/assets/85386116/32750f28-0f15-4527-8093-4443eea583b5" alt="image" width="300"> | <img src="https://github.com/LegendSumeet/eventapp/assets/85386116/70ab69d2-f062-48f5-bdc6-dd46c7a26d8f" alt="image" width="300"> |
+
+
+ 
 
 
 ## Features
@@ -75,13 +80,13 @@ We welcome contributions from the community! To contribute to this project:
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people:
-- [Legend Sumeet](https://github.com/LegendSumeet)
-- [Aayush Paigwar](https://github.com/AayushPaigwar)
-- [Prapti Sharma](https://github.com/praptisharma28)
+<a href="https://github.com/LegendSumeet/eventapp/graphs/contributors
+">
+  <img src="https://contrib.rocks/image?repo=LegendSumeet/eventapp" />
+</a>
 
 
-Contributions of any kind are welcome!🤗
+
 
 ## License 👮
 
