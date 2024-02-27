@@ -245,22 +245,22 @@ class _HomePageState extends State<HomePage> {
         ),
       );
 
-  _buildSearch() => GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const MySearchWidget()),
-          );
-        },
-        child: Container(
-          height: 48,
-          width: double.infinity,
-          margin: const EdgeInsets.symmetric(horizontal: 24),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(50)),
-            color: AppColors.greyLightColor,
-          ),
+  _buildSearch() => Container(
+        height: 48,
+        width: double.infinity,
+        margin: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+          color: AppColors.greyLightColor,
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MySearchWidget()),
+            );
+          },
           child: Row(
             children: [
               Image.asset('assets/images/search.png', width: 16),
