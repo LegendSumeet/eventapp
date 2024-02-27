@@ -12,6 +12,7 @@ import 'package:event_app/ui/widgets/card_event_this_month.dart';
 import 'package:event_app/ui/widgets/card_popular_event.dart';
 import 'package:event_app/ui/widgets/custom_app_bar.dart';
 import 'package:event_app/ui/widgets/my_navigation_bar.dart';
+import 'package:event_app/ui/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,43 +20,40 @@ import 'package:flutter_svg/svg.dart';
 
 import 'view_all_page.dart';
 
-
 class HomePage extends StatefulWidget {
   HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
-
 }
-class _HomePageState extends State<HomePage> {
 
-  String address_locality="";
-  String address_country="";
+class _HomePageState extends State<HomePage> {
+  String address_locality = "";
+  String address_country = "";
 
   late LocationController _controller;
   late locationModel lc;
 
   @override
-  void initState(){
-
+  void initState() {
     super.initState();
-    _controller=LocationController();
-    lc=locationModel(country: "", locality: "");
+    _controller = LocationController();
+    lc = locationModel(country: "", locality: "");
     _updateLocation();
   }
 
-  Future<void> _updateLocation() async{
-    try{
+  Future<void> _updateLocation() async {
+    try {
       lc = await _controller.getCurrentLocation();
       setState(() {
         address_locality = lc.locality;
         address_country = lc.country;
       });
-    }catch(e){
+    } catch (e) {
       print('Error updating location: $e');
       setState(() {
-        address_locality="No address";
-        address_country="";
+        address_locality = "No address";
+        address_country = "";
       });
     }
   }
@@ -95,7 +93,9 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ViewAllPage(isPopularEvent: true,)),
+                                builder: (context) => const ViewAllPage(
+                                      isPopularEvent: true,
+                                    )),
                           );
                         },
                         child: const Text(
@@ -103,8 +103,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: AppColors.primaryColor
-                          ),
+                              color: AppColors.primaryColor),
                         ),
                       )
                     ],
@@ -123,30 +122,33 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 const SizedBox(height: 12),
-                Divider(height: 1,
-                endIndent: 16,
-                indent: 16,
-                thickness: 0.5,
-                color: Theme.of(context).disabledColor.withOpacity(0.1),
+                Divider(
+                  height: 1,
+                  endIndent: 16,
+                  indent: 16,
+                  thickness: 0.5,
+                  color: Theme.of(context).disabledColor.withOpacity(0.1),
                 ),
                 const SizedBox(height: 8),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
                         "Event This Month",
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, 
-                            fontSize: 18),
+                            fontWeight: FontWeight.w600, fontSize: 18),
                       ),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ViewAllPage(isPopularEvent: false,)),
+                                builder: (context) => const ViewAllPage(
+                                      isPopularEvent: false,
+                                    )),
                           );
                         },
                         child: const Text(
@@ -154,8 +156,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                             color: AppColors.primaryColor
-                            ),
+                              color: AppColors.primaryColor),
                         ),
                       )
                     ],
@@ -191,9 +192,9 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Row(children: [
-                     Image.asset(
-                    'assets/images/location.png',
+                  Row(children: [
+                    Image.asset(
+                      'assets/images/location.png',
                       width: 20,
                     ),
                     const SizedBox(width: 8),
@@ -206,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ]),
-                   const SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     address_locality,
                     style: const TextStyle(
@@ -217,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-           const Spacer(),
+            const Spacer(),
             GestureDetector(
               onTap: () {
                 // Navigate to the specific page here
@@ -253,18 +254,25 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.all(Radius.circular(50)),
           color: AppColors.greyLightColor,
         ),
-        child: Row(
-          children: [
-            Image.asset('assets/images/search.png', width: 16),
-            const SizedBox(width: 8),
-            const Text(
-              "Search event...",
-              style: TextStyle(
-                  color: AppColors.greyTextColor, 
-                  fontWeight: FontWeight.w500
-              ),
-            )
-          ],
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MySearchWidget()),
+            );
+          },
+          child: Row(
+            children: [
+              Image.asset('assets/images/search.png', width: 16),
+              const SizedBox(width: 8),
+              const Text(
+                "Search event...",
+                style: TextStyle(
+                    color: AppColors.greyTextColor,
+                    fontWeight: FontWeight.w500),
+              )
+            ],
+          ),
         ),
       );
 
@@ -275,13 +283,8 @@ class _HomePageState extends State<HomePage> {
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           autoplay: true,
-          pagination: const SwiperPagination(
-          alignment: Alignment.bottomCenter
-          ),
-          control:   const SwiperControl(
-            size: 0,
-            padding: EdgeInsets.all(0)
-          ),
+          pagination: const SwiperPagination(alignment: Alignment.bottomCenter),
+          control: const SwiperControl(size: 0, padding: EdgeInsets.all(0)),
           itemCount: events.length,
           itemBuilder: (context, index) => GestureDetector(
             onTap: () => Navigator.pushNamed(

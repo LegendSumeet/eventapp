@@ -13,7 +13,7 @@ class CardEventThisMonth extends StatelessWidget {
     return Container(
       height: 95,
       margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: AppColors.whiteColor,
