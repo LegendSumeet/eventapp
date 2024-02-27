@@ -113,7 +113,7 @@ class _MySearchWidgetState extends State<MySearchWidget> {
                                 context,
                                 NamedRoutes.detailScreen)),
                             child: CardEventThisMonth(
-                              eventModel: eventList[index],
+                              eventModel: filteredList[index],
                             ),
                           );
                         },
@@ -136,11 +136,12 @@ class _MySearchWidgetState extends State<MySearchWidget> {
       List<EventModel> tempFilteredList = [];
       for (var event in eventList) {
         if (event.title.toLowerCase().contains(searchText.toLowerCase())) {
+          print(event.title.toLowerCase());
           tempFilteredList.add(event);
         }
       }
       setState(() {
-        filteredList = tempFilteredList; // Set the filtered list
+        filteredList = tempFilteredList; // Set the filtered
       });
     }
   }
