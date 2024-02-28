@@ -18,6 +18,11 @@ dependencies:
   geolocator: ^10.1.0
   card_swiper: ^3.0.1
   geocoding: ^2.1.1
+  country_picker: ^2.0.24
+  firebase_core: ^2.3.0
+  firebase_auth: ^4.1.5
+  cloud_firestore: ^4.1.0
+  firebase_storage: ^11.0.6
 
 dev_dependencies:
   flutter_test:
