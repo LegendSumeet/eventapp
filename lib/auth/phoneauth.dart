@@ -153,8 +153,10 @@ class _PhoneAuthState extends State<PhoneAuth> {
                         print("Verified Successfully");
                       },
                       verificationFailed: (FirebaseAuthException ex) {
-                        print('Error verifying OTP: $ex');
-                      },
+                      print("Error verifying OTP: ${ex.message}");
+                      
+                      
+                    },
                       codeSent: (String verificationid, int? resendToken) {
                         Navigator.push(
                             context,
